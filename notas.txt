@@ -1,0 +1,16 @@
+1- revisitar a função de custo:
+    a) Pq usar A_op?
+    R:A_op está servindo como operador de salto,se for o que queremos prever, este deve ser o y_pred
+
+    b)Quando queremos prever o operador de salto(gama no código), o aprendizado nao é supervisionado
+    -o q eu chamo de y_true=rho_t+1 -rho_t (!=) do operador de salto
+
+    c)Até entao tratamos y_pred= operador de salto.
+
+
+2- Sobre o modelo:
+    a)previsao de estados de treino nao está dando fidelidade proxima a 1, como era de se esperar.
+        Hipoteses:
+        1) Duplo calculo de media em gama deixa a generalização ruim
+            R: Encontrar um gama fixo (fixed effects)
+            R2: Prever apenas steps temporais e abandonar ideia de conseguir o gama
